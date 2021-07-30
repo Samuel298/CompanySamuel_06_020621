@@ -6,7 +6,12 @@ const path = require('path'); // nous donne access au chemin des fichiers
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 
-mongoose.connect(`mongodb+srv://s298:kjo6SFpqjjyxJqY1@hotsauce.jmkhk.mongodb.net/hotsauce?retryWrites=true&w=majority`, // avec dotenv on chache les donné personnelle
+require("dotenv").config();
+const ID = process.env.ID;
+const MDP = process.env.MDP;
+
+mongoose.connect(`mongodb+srv://${ID}:${MDP}@hotsauce.jmkhk.mongodb.net/hotsauce?retryWrites=true&w=majority`, 
+
     {
         useNewUrlParser: true,
         useUnifiedTopology: true

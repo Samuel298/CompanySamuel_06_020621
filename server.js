@@ -1,6 +1,10 @@
 // creation d'un programme qui va ecouter des requetes http et qui va y repondre
 const http = require('http'); // importer le paquage de http de node
 const app = require('./app'); // importer l'app
+require("dotenv").config();
+
+const PORT =process.env.PORT;
+
 
 // la fonction normalizePort renvoie un port valide, qu'il soit fourni sous la forme d'un numéro ou d'une chaîne ;
 const normalizePort = val => {
